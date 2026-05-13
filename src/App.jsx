@@ -262,7 +262,7 @@ function Card360Viewer({ front, back, rarityColor, onClose, name }) {
       {/* Ambient glow */}
       <div style={{position:"absolute",inset:0,background:`radial-gradient(ellipse at 50% 45%,${rarityColor}22 0%,transparent 60%)`,pointerEvents:"none"}}/>
       {/* Close */}
-      <button onClick={onClose} style={{position:"absolute",top:16,left:16,width:38,height:38,borderRadius:"50%",background:"#ffffff14",border:"none",color:"#fff",fontSize:18,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",zIndex:10}}>✕</button>
+      <button onClick={onClose} style={{position:"absolute",top:"calc(16px + var(--sat, 44px))",left:16,width:38,height:38,borderRadius:"50%",background:"#ffffff14",border:"none",color:"#fff",fontSize:18,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",zIndex:10}}>✕</button>
       <div style={{position:"absolute",top:22,left:0,right:0,textAlign:"center",color:"#ffffff30",fontSize:10,letterSpacing:4,pointerEvents:"none"}}>VISOR 360°</div>
 
       {/* 3D Stage */}
@@ -496,7 +496,7 @@ function CollectionScreen({ cards, collections, setCollections, onViewCollection
   const uncategorized=cards.filter(c=>!c.collectionId).length;
   return (
     <div style={{paddingBottom:100}}>
-      <div style={{padding:"28px 20px 20px",display:"flex",alignItems:"center",gap:12}}>
+      <div style={{padding:"calc(56px + var(--sat, 44px)) 20px 20px",display:"flex",alignItems:"center",gap:12}}>
         <VaultLogo size={42}/>
         <h1 style={{margin:0,fontSize:28,fontWeight:900,letterSpacing:-0.5}}>
           <span style={{color:T.accent}}>CÉSAR'S</span> VAULT
@@ -555,7 +555,7 @@ function CardsInCollection({ collection, cards, rarities, onBack, onView, T }) {
   const colCards=collection?cards.filter(c=>c.collectionId===collection.id):cards.filter(c=>!c.collectionId);
   return (
     <div style={{paddingBottom:100}}>
-      <div style={{padding:"16px 20px",display:"flex",alignItems:"center",gap:14,position:"sticky",top:0,background:`${T.bg}ee`,backdropFilter:"blur(10px)",zIndex:10}}>
+      <div style={{padding:"calc(16px + var(--sat, 44px)) 20px 16px",display:"flex",alignItems:"center",gap:14,position:"sticky",top:0,background:`${T.bg}ee`,backdropFilter:"blur(10px)",zIndex:10}}>
         <button onClick={onBack} style={{width:36,height:36,borderRadius:"50%",background:"#ffffff14",border:"none",color:T.text,fontSize:20,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>←</button>
         <div style={{flex:1,minWidth:0}}><div style={{fontSize:17,fontWeight:700,color:T.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{collection?.name||"Sin colección"}</div><div style={{fontSize:11,color:T.textMuted}}>{colCards.length} cartas</div></div>
       </div>
@@ -739,7 +739,7 @@ function BottomNav({ tab, setTab, T }) {
     { id:"settings",   label:"Ajustes" },
   ];
   return (
-    <div style={{position:"fixed",bottom:0,left:0,right:0,zIndex:150,background:T.navBg,backdropFilter:"blur(20px)",borderTop:`1px solid ${T.navBorder}`,display:"flex",justifyContent:"space-around",padding:"10px 0 28px"}}>
+    <div style={{position:"fixed",bottom:0,left:0,right:0,zIndex:150,background:T.navBg,backdropFilter:"blur(20px)",borderTop:`1px solid ${T.navBorder}`,display:"flex",justifyContent:"space-around",paddingTop:10,paddingBottom:"calc(28px + var(--sab, 20px))"}}>
       {items.map(item=>{
         const active=tab===item.id;
         const d = T.icons[item.id==="settings"?"settings":item.id==="search"?"search":"collection"];
@@ -803,7 +803,7 @@ export default function App() {
 
   return(
     <div style={{minHeight:"100vh",background:T.bg,backgroundImage:T.bgGrad,fontFamily:"Inter,sans-serif",color:T.text,transition:"background 0.4s"}}>
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');*{box-sizing:border-box;}button,input,select{font-family:Inter,sans-serif;}select option{background:#1a1a2e;color:#e8e0d5;}`}</style>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');*{box-sizing:border-box;}button,input,select{font-family:Inter,sans-serif;}select option{background:#1a1a2e;color:#e8e0d5;}:root{--sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px);}`}</style>
 
       {tab==="collection"&&activeCollection===undefined&&<CollectionScreen cards={cards} collections={collections} setCollections={handleCollections} onViewCollection={col=>setActiveCollection(col)} T={T}/>}
       {tab==="collection"&&activeCollection!==undefined&&<CardsInCollection collection={activeCollection} cards={cards} rarities={rarities} onBack={()=>setActiveCollection(undefined)} onView={setViewCard} T={T}/>}
@@ -814,7 +814,7 @@ export default function App() {
 
       {/* FAB — fixed bottom right */}
       {(tab==="collection")&&(
-        <button onClick={()=>setShowAddCard(true)} style={{position:"fixed",bottom:88,right:22,width:58,height:58,borderRadius:"50%",background:T.accentGrad,border:"none",fontSize:24,color:"#0a0a0f",boxShadow:`0 4px 24px ${T.accent}66,0 0 0 1px ${T.accent}33`,cursor:"pointer",zIndex:100,display:"flex",alignItems:"center",justifyContent:"center",fontWeight:700}}>✦</button>
+        <button onClick={()=>setShowAddCard(true)} style={{position:"fixed",bottom:"calc(88px + var(--sab, 20px))",right:22,width:58,height:58,borderRadius:"50%",background:T.accentGrad,border:"none",fontSize:24,color:"#0a0a0f",boxShadow:`0 4px 24px ${T.accent}66,0 0 0 1px ${T.accent}33`,cursor:"pointer",zIndex:100,display:"flex",alignItems:"center",justifyContent:"center",fontWeight:700}}>✦</button>
       )}
 
       {showAddCard&&<CardForm onSave={handleAddCard} onClose={()=>setShowAddCard(false)} title="NUEVA CARTA" categories={categories} collections={collections} rarities={rarities} T={T}/>}

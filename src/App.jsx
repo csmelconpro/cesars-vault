@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 // ─── LOCAL STORAGE HELPERS ────────────────────────────────────────────────────
 const storage = {
@@ -244,10 +244,10 @@ function VaultMark({ size=32, color="#ffd700" }) {
 
 // Full logo image (for splash/header)
 function VaultLogo({ size=48 }) {
-  return <img src="/icon.png" alt="César's Vault" style={{width:size,height:size,objectFit:"contain",display:"block"}}/>;
+  return <img src={LOGO_B64} alt="César's Vault" style={{width:size,height:size,objectFit:"contain",display:"block"}}/>;
 }
 function VaultLogoH({ height=52 }) {
-  return <img src="/icon.png" alt="César's Vault" style={{height:height,width:"auto",objectFit:"contain",display:"block",maxWidth:"100%"}}/>;
+  return <img src={LOGO_H_B64} alt="César's Vault" style={{height:height,width:"auto",objectFit:"contain",display:"block",maxWidth:"100%"}}/>;
 }
 
 // Theme-aware nav icons

@@ -19,49 +19,138 @@ const storage = {
 
 // ─── THEME DEFINITIONS ────────────────────────────────────────────────────────
 const THEMES = {
+  // ── DEFAULT: César — verde oscuro + dorado + rosa sakura ──────────────────
+  cesar: {
+    name:"César", emoji:"🌸", premium:false,
+    bg:"#0d1a0d", bgGrad:"radial-gradient(ellipse at 30% 0%,#1a2e0a 0%,transparent 50%),radial-gradient(ellipse at 70% 100%,#2e1a00 0%,transparent 50%)",
+    accent:"#d4a017", accent2:"#ff8fab", accentGrad:"linear-gradient(135deg,#d4a017,#f0c040)",
+    surface:"#111f0f", surface2:"#ffffff09", border:"#d4a01730",
+    text:"#f0e8d0", textSub:"#5a7a3a", textMuted:"#4a6a3a",
+    card:"#0f1a0e", sheet:"linear-gradient(180deg,#111f0f 0%,#0a140a 100%)",
+    navBg:"#0d1a0dee", navBorder:"#d4a01730", pill:"#c8b060", ambientColor:"#d4a017",
+    icons:{collection:"M4 6h16M4 10h16M4 14h8M4 18h8",search:"M10 10m-5 0a5 5 0 1 0 10 0a5 5 0 1 0-10 0M19 19l-4-4",settings:"M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"},
+  },
+  // ── VAULT — negro abismal + dorado ────────────────────────────────────────
   vault: {
-    name:"Vault", emoji:"🔐",
+    name:"Vault", emoji:"🔐", premium:false,
     bg:"#0a0a0f", bgGrad:"radial-gradient(ellipse at 15% 0%,#1a0a2e 0%,transparent 45%),radial-gradient(ellipse at 85% 100%,#0a1a2e 0%,transparent 45%)",
     accent:"#ffd700", accent2:"#ff9f43", accentGrad:"linear-gradient(135deg,#ffd700,#ff9f43)",
     surface:"#0f0f1a", surface2:"#ffffff09", border:"#ffffff14",
     text:"#e8e0d5", textSub:"#6a5a4a", textMuted:"#5a5a7a",
     card:"#0f0f1a", sheet:"linear-gradient(180deg,#0f0f1c 0%,#0a0a12 100%)",
     navBg:"#0a0a0fee", navBorder:"#ffd70030", pill:"#c0b090", ambientColor:"#c8a0ff",
-    // Icons: geometric/vault style
-    icons: { collection:"M4 6h16M4 10h16M4 14h8M4 18h8", search:"M10 10m-5 0a5 5 0 1 0 10 0a5 5 0 1 0-10 0M19 19l-4-4", settings:"M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" },
+    icons:{collection:"M4 6h16M4 10h16M4 14h8M4 18h8",search:"M10 10m-5 0a5 5 0 1 0 10 0a5 5 0 1 0-10 0M19 19l-4-4",settings:"M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"},
   },
-  street: {
-    name:"Street", emoji:"🛹",
-    bg:"#0d1a0a", bgGrad:"radial-gradient(ellipse at 20% 0%,#1a2e0a 0%,transparent 50%),radial-gradient(ellipse at 80% 100%,#002e2e 0%,transparent 50%)",
-    accent:"#b8ff00", accent2:"#00e5cc", accentGrad:"linear-gradient(135deg,#b8ff00,#00e5cc)",
-    surface:"#111a0d", surface2:"#ffffff09", border:"#ffffff14",
-    text:"#e8f5e0", textSub:"#4a6a3a", textMuted:"#4a6a5a",
-    card:"#111a0d", sheet:"linear-gradient(180deg,#111a0d 0%,#0a140a 100%)",
-    navBg:"#0d1a0aee", navBorder:"#b8ff0030", pill:"#90c070", ambientColor:"#b8ff00",
-    // Icons: spray/graffiti style (rounded, bold)
-    icons: { collection:"M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z", search:"M10 10m-5 0a5 5 0 1 0 10 0a5 5 0 1 0-10 0M19 19l-4-4", settings:"M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" },
+  // ── HOLO — arcoíris iridiscente, estilo carta holográfica ─────────────────
+  holo: {
+    name:"Holo", emoji:"✨", premium:true,
+    bg:"#080818", bgGrad:"linear-gradient(135deg,#0d0820 0%,#080818 30%,#080820 60%,#08180d 100%)",
+    bgAnim:"holoShift 8s ease infinite",
+    accent:"#a78bfa", accent2:"#38bdf8", accentGrad:"linear-gradient(135deg,#a78bfa,#38bdf8,#34d399,#fb7185)",
+    surface:"#0d0d20", surface2:"#ffffff09", border:"#a78bfa22",
+    text:"#f0eeff", textSub:"#6a5a9a", textMuted:"#5a5a8a",
+    card:"#0d0d20", sheet:"linear-gradient(180deg,#0d0d20 0%,#080818 100%)",
+    navBg:"#080818ee", navBorder:"#a78bfa30", pill:"#c0b0ff", ambientColor:"#a78bfa",
+    icons:{collection:"M4 4h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z",search:"M10 10m-5 0a5 5 0 1 0 10 0a5 5 0 1 0-10 0M19 19l-4-4",settings:"M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z"},
   },
+  // ── GOLD — dorado puro, lujo máximo ───────────────────────────────────────
+  gold: {
+    name:"Gold", emoji:"🏆", premium:true,
+    bg:"#0a0800", bgGrad:"radial-gradient(ellipse at 50% 0%,#2a1a00 0%,#0a0800 60%)",
+    accent:"#fbbf24", accent2:"#f59e0b", accentGrad:"linear-gradient(135deg,#fef08a,#fbbf24,#b45309)",
+    surface:"#1a1000", surface2:"#fbbf2409", border:"#fbbf2422",
+    text:"#fef3c7", textSub:"#92400e", textMuted:"#78350f",
+    card:"#130c00", sheet:"linear-gradient(180deg,#1a1000 0%,#0d0800 100%)",
+    navBg:"#0a0800ee", navBorder:"#fbbf2440", pill:"#fde68a", ambientColor:"#fbbf24",
+    icons:{collection:"M12 2l3 7h7l-5.5 4.5 2 7L12 17l-6.5 3.5 2-7L2 9h7z",search:"M10 10m-5 0a5 5 0 1 0 10 0a5 5 0 1 0-10 0M19 19l-4-4",settings:"M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z"},
+  },
+  // ── OBSIDIAN — negro mate ultra premium ───────────────────────────────────
+  obsidian: {
+    name:"Obsidian", emoji:"🖤", premium:true,
+    bg:"#050505", bgGrad:"radial-gradient(ellipse at 20% 20%,#111111 0%,#050505 60%)",
+    accent:"#e2e8f0", accent2:"#94a3b8", accentGrad:"linear-gradient(135deg,#f8fafc,#94a3b8)",
+    surface:"#0f0f0f", surface2:"#ffffff06", border:"#ffffff0f",
+    text:"#f1f5f9", textSub:"#475569", textMuted:"#334155",
+    card:"#0a0a0a", sheet:"linear-gradient(180deg,#0f0f0f 0%,#050505 100%)",
+    navBg:"#050505f0", navBorder:"#ffffff12", pill:"#cbd5e1", ambientColor:"#64748b",
+    icons:{collection:"M4 6h16M4 10h16M4 14h16M4 18h16",search:"M10 10m-5 0a5 5 0 1 0 10 0a5 5 0 1 0-10 0M19 19l-4-4",settings:"M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"},
+  },
+  // ── SAKURA — rosa japonés, flores de cerezo ───────────────────────────────
+  sakura: {
+    name:"Sakura", emoji:"🌸", premium:true,
+    bg:"#1a0810", bgGrad:"radial-gradient(ellipse at 30% 0%,#2d0f1f 0%,#1a0810 50%),radial-gradient(ellipse at 70% 100%,#1f0a18 0%,transparent 50%)",
+    accent:"#f9a8d4", accent2:"#fda4af", accentGrad:"linear-gradient(135deg,#f9a8d4,#fda4af,#c084fc)",
+    surface:"#220d16", surface2:"#f9a8d409", border:"#f9a8d422",
+    text:"#fdf2f8", textSub:"#9d174d", textMuted:"#831843",
+    card:"#1a0810", sheet:"linear-gradient(180deg,#220d16 0%,#150608 100%)",
+    navBg:"#1a0810ee", navBorder:"#f9a8d430", pill:"#fbcfe8", ambientColor:"#f9a8d4",
+    icons:{collection:"M12 2C6 2 2 6 2 12s4 10 10 10 10-4 10-10S18 2 12 2zm0 3c1.5 0 3 .5 4 1.5L5.5 16C4.5 15 4 13.5 4 12c0-3.3 2.7-7 8-7zm0 14c-1.5 0-3-.5-4-1.5l10.5-9.5c1 1 1.5 2.5 1.5 4 0 3.3-2.7 7-8 7z",search:"M10 10m-5 0a5 5 0 1 0 10 0a5 5 0 1 0-10 0M19 19l-4-4",settings:"M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z"},
+  },
+  // ── NEON — cyberpunk neón verde lima ──────────────────────────────────────
+  neon: {
+    name:"Neon", emoji:"⚡", premium:true,
+    bg:"#00060a", bgGrad:"radial-gradient(ellipse at 0% 0%,#001a0a 0%,#00060a 40%),radial-gradient(ellipse at 100% 100%,#00060f 0%,transparent 50%)",
+    accent:"#39ff14", accent2:"#00ffff", accentGrad:"linear-gradient(135deg,#39ff14,#00ffff)",
+    surface:"#001008", surface2:"#39ff1409", border:"#39ff1422",
+    text:"#e0ffe8", textSub:"#1a5c2a", textMuted:"#0f3a1a",
+    card:"#000d06", sheet:"linear-gradient(180deg,#001008 0%,#000806 100%)",
+    navBg:"#00060aee", navBorder:"#39ff1440", pill:"#86efac", ambientColor:"#39ff14",
+    icons:{collection:"M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z",search:"M10 10m-5 0a5 5 0 1 0 10 0a5 5 0 1 0-10 0M19 19l-4-4",settings:"M12 3c-1 2-3 2-4 4s0 4 0 5-2 3-1 5 4 2 5 2 4 0 5-2-1-3-1-5 2-3 0-5-3-2-4-4z"},
+  },
+  // ── SLAM — rojo editorial Vogue/NBA ───────────────────────────────────────
   slam: {
-    name:"Slam", emoji:"🏀",
+    name:"Slam", emoji:"🏀", premium:false,
     bg:"#1a0000", bgGrad:"radial-gradient(ellipse at 50% 0%,#3a0000 0%,transparent 60%)",
     accent:"#ff2200", accent2:"#ff6600", accentGrad:"linear-gradient(135deg,#ff2200,#ff6600)",
     surface:"#1f0505", surface2:"#ffffff09", border:"#ffffff14",
     text:"#fff0ee", textSub:"#7a3a3a", textMuted:"#6a3a3a",
     card:"#1f0505", sheet:"linear-gradient(180deg,#1f0505 0%,#140202 100%)",
     navBg:"#1a0000ee", navBorder:"#ff220030", pill:"#c07070", ambientColor:"#ff2200",
-    // Icons: bold/editorial style
-    icons: { collection:"M4 4h7v9H4zM13 4h7v5h-7zM13 11h7v9h-7zM4 15h7v5H4z", search:"M11 11m-6 0a6 6 0 1 0 12 0a6 6 0 1 0-12 0M20 20l-4.35-4.35", settings:"M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z" },
+    icons:{collection:"M4 4h7v9H4zM13 4h7v5h-7zM13 11h7v9h-7zM4 15h7v5H4z",search:"M11 11m-6 0a6 6 0 1 0 12 0a6 6 0 1 0-12 0M20 20l-4.35-4.35",settings:"M12 2l2 7h7l-5.5 4.5 2 7L12 17l-6.5 3.5 2-7L2 9h7z"},
   },
+  // ── BASQUIAT — azul cobalto + amarillo raw ────────────────────────────────
   basquiat: {
-    name:"Basquiat", emoji:"🎨",
+    name:"Basquiat", emoji:"🎨", premium:false,
     bg:"#012030", bgGrad:"radial-gradient(ellipse at 30% 20%,#004466 0%,transparent 55%),radial-gradient(ellipse at 70% 80%,#003344 0%,transparent 55%)",
     accent:"#f5c800", accent2:"#ff6b35", accentGrad:"linear-gradient(135deg,#f5c800,#ff6b35)",
     surface:"#012a3a", surface2:"#ffffff09", border:"#ffffff14",
     text:"#f0f4f8", textSub:"#3a6a7a", textMuted:"#3a5a6a",
     card:"#012a3a", sheet:"linear-gradient(180deg,#012a3a 0%,#011a28 100%)",
     navBg:"#012030ee", navBorder:"#f5c80030", pill:"#70a0b0", ambientColor:"#00aacc",
-    // Icons: raw/painterly style (asymmetric strokes)
-    icons: { collection:"M5 5h5v5H5zM14 5h5v5h-5zM5 14h5v5H5zM14 14h5v5h-5z", search:"M10.5 10.5m-5.5 0a5.5 5.5 0 1 0 11 0a5.5 5.5 0 1 0-11 0M18 18l-3.5-3.5", settings:"M12 3c-1 2-3 2-4 4s0 4 0 5-2 3-1 5 4 2 5 2 4 0 5-2-1-3-1-5 2-3 0-5-3-2-4-4z" },
+    icons:{collection:"M5 5h5v5H5zM14 5h5v5h-5zM5 14h5v5H5zM14 14h5v5h-5z",search:"M10.5 10.5m-5.5 0a5.5 5.5 0 1 0 11 0a5.5 5.5 0 1 0-11 0M18 18l-3.5-3.5",settings:"M12 3c-1 2-3 2-4 4s0 4 0 5-2 3-1 5 4 2 5 2 4 0 5-2-1-3-1-5 2-3 0-5-3-2-4-4z"},
+  },
+  // ── STREET — graffiti urbano BMX ──────────────────────────────────────────
+  street: {
+    name:"Street", emoji:"🛹", premium:false,
+    bg:"#0d1a0a", bgGrad:"radial-gradient(ellipse at 20% 0%,#1a2e0a 0%,transparent 50%),radial-gradient(ellipse at 80% 100%,#002e2e 0%,transparent 50%)",
+    accent:"#b8ff00", accent2:"#00e5cc", accentGrad:"linear-gradient(135deg,#b8ff00,#00e5cc)",
+    surface:"#111a0d", surface2:"#ffffff09", border:"#ffffff14",
+    text:"#e8f5e0", textSub:"#4a6a3a", textMuted:"#4a6a5a",
+    card:"#111a0d", sheet:"linear-gradient(180deg,#111a0d 0%,#0a140a 100%)",
+    navBg:"#0d1a0aee", navBorder:"#b8ff0030", pill:"#90c070", ambientColor:"#b8ff00",
+    icons:{collection:"M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z",search:"M10 10m-5 0a5 5 0 1 0 10 0a5 5 0 1 0-10 0M19 19l-4-4",settings:"M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"},
+  },
+  // ── MIDNIGHT — azul medianoche ultra profundo ─────────────────────────────
+  midnight: {
+    name:"Midnight", emoji:"🌙", premium:true,
+    bg:"#000814", bgGrad:"radial-gradient(ellipse at 50% 0%,#001233 0%,#000814 50%),radial-gradient(ellipse at 100% 100%,#00092a 0%,transparent 60%)",
+    accent:"#60a5fa", accent2:"#818cf8", accentGrad:"linear-gradient(135deg,#60a5fa,#818cf8,#a78bfa)",
+    surface:"#001233", surface2:"#60a5fa09", border:"#60a5fa22",
+    text:"#e0f2fe", textSub:"#1e3a5f", textMuted:"#1e3a8a",
+    card:"#000f28", sheet:"linear-gradient(180deg,#001233 0%,#000814 100%)",
+    navBg:"#000814ee", navBorder:"#60a5fa30", pill:"#93c5fd", ambientColor:"#60a5fa",
+    icons:{collection:"M4 6h16M4 10h16M4 14h8M4 18h8",search:"M10 10m-5 0a5 5 0 1 0 10 0a5 5 0 1 0-10 0M19 19l-4-4",settings:"M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"},
+  },
+  // ── CRIMSON — vino tinto elegante ─────────────────────────────────────────
+  crimson: {
+    name:"Crimson", emoji:"🍷", premium:true,
+    bg:"#0d0005", bgGrad:"radial-gradient(ellipse at 40% 0%,#2d0010 0%,#0d0005 55%)",
+    accent:"#f43f5e", accent2:"#fb7185", accentGrad:"linear-gradient(135deg,#9f1239,#f43f5e,#fb923c)",
+    surface:"#1a000a", surface2:"#f43f5e09", border:"#f43f5e22",
+    text:"#fff1f2", textSub:"#9f1239", textMuted:"#881337",
+    card:"#130008", sheet:"linear-gradient(180deg,#1a000a 0%,#0d0005 100%)",
+    navBg:"#0d0005ee", navBorder:"#f43f5e30", pill:"#fda4af", ambientColor:"#f43f5e",
+    icons:{collection:"M4 4h7v9H4zM13 4h7v5h-7zM13 11h7v9h-7zM4 15h7v5H4z",search:"M10 10m-5 0a5 5 0 1 0 10 0a5 5 0 1 0-10 0M19 19l-4-4",settings:"M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z"},
   },
 };
 
@@ -324,7 +413,7 @@ function CardDetail({ card, onClose, onEdit, onDelete, on3D, rarities, T }) {
       {/* Full-screen card image */}
       <div style={{position:"absolute",inset:0}}>
         {card.imageFront
-          ? <img src={card.imageFront} style={{width:"100%",height:"100%",objectFit:"cover",display:"block"}}/>
+          ? <img src={card.imageFront} style={{width:"100%",height:"100%",objectFit:"contain",objectPosition:"center 20%",display:"block",background:"#000"}}/>
           : <div style={{width:"100%",height:"100%",background:"linear-gradient(135deg,#1a1a2e,#0d0d1a)",display:"flex",alignItems:"center",justifyContent:"center"}}><VaultMark size={80} color={glowColor}/></div>}
         {/* Gradient overlay bottom */}
         <div style={{position:"absolute",inset:0,background:"linear-gradient(to bottom,rgba(0,0,0,0.3) 0%,transparent 30%,transparent 50%,rgba(0,0,0,0.85) 100%)"}}/>
@@ -333,8 +422,8 @@ function CardDetail({ card, onClose, onEdit, onDelete, on3D, rarities, T }) {
       </div>
 
       {/* Top controls */}
-      <div style={{position:"absolute",top:0,left:0,right:0,display:"flex",justifyContent:"space-between",alignItems:"center",padding:"16px 20px",zIndex:20}}>
-        <button onClick={onClose} style={{width:38,height:38,borderRadius:"50%",background:"#00000066",backdropFilter:"blur(8px)",border:"1px solid #ffffff20",color:"#fff",fontSize:18,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center"}}>✕</button>
+      <div style={{position:"absolute",top:0,left:0,right:0,display:"flex",justifyContent:"space-between",alignItems:"center",padding:"calc(20px + var(--sat, 44px)) 20px 16px",zIndex:20}}>
+        <button onClick={onClose} style={{width:42,height:42,borderRadius:"50%",background:"#000000bb",backdropFilter:"blur(12px)",border:"1px solid #ffffff20",color:"#fff",fontSize:18,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center"}}>✕</button>
         <button onClick={onEdit} style={{background:"#00000066",backdropFilter:"blur(8px)",border:"1px solid #ffffff30",borderRadius:20,padding:"8px 18px",color:"#fff",fontSize:12,cursor:"pointer",letterSpacing:1}}>Editar</button>
       </div>
 
@@ -490,8 +579,11 @@ function CardForm({ initial, onSave, onClose, title, categories, collections, ra
 function CollectionScreen({ cards, collections, setCollections, onViewCollection, T }) {
   const [showNew,setShowNew]=useState(false);
   const [newName,setNewName]=useState(""); const [newDesc,setNewDesc]=useState("");
-  const create=()=>{ if(!newName.trim())return; setCollections([...collections,{id:`col_${Date.now()}`,name:newName.trim(),desc:newDesc.trim(),createdAt:new Date().toISOString()}]); setNewName("");setNewDesc("");setShowNew(false); };
-  const cover=(colId)=>{ const c=cards.find(c=>c.collectionId===colId&&c.imageFront); return c?.imageFront||null; };
+  const [newCover,setNewCover]=useState(null);
+  const coverRef=useRef();
+  const handleCoverFile=async e=>{ const file=e.target.files[0]; if(!file) return; const img=await fileToImage(file); if(img) setNewCover(img); e.target.value=""; };
+  const create=()=>{ if(!newName.trim())return; setCollections([...collections,{id:`col_${Date.now()}`,name:newName.trim(),desc:newDesc.trim(),cover:newCover||null,createdAt:new Date().toISOString()}]); setNewName("");setNewDesc("");setNewCover(null);setShowNew(false); };
+  const cover=(colId)=>{ const col=collections.find(c=>c.id===colId); if(col?.cover) return col.cover; const c=cards.find(c=>c.collectionId===colId&&c.imageFront); return c?.imageFront||null; };
   const count=(colId)=>cards.filter(c=>c.collectionId===colId).length;
   const uncategorized=cards.filter(c=>!c.collectionId).length;
   return (
@@ -540,7 +632,14 @@ function CollectionScreen({ cards, collections, setCollections, onViewCollection
           <div style={{background:T.bg,borderTop:`2px solid ${T.accent}44`,marginTop:"auto",borderRadius:"20px 20px 0 0",padding:"24px 20px 48px"}}>
             <div style={{textAlign:"center",marginBottom:20,fontSize:10,letterSpacing:5,color:T.textSub}}>NUEVA COLECCIÓN</div>
             <input style={{width:"100%",background:"#ffffff07",border:`1px solid ${T.border}`,borderRadius:10,padding:"11px 14px",color:T.text,fontSize:15,marginBottom:16,boxSizing:"border-box",outline:"none"}} value={newName} onChange={e=>setNewName(e.target.value)} placeholder="Ej: Mundial Panini 2026..."/>
-            <input style={{width:"100%",background:"#ffffff07",border:`1px solid ${T.border}`,borderRadius:10,padding:"11px 14px",color:T.text,fontSize:15,marginBottom:20,boxSizing:"border-box",outline:"none"}} value={newDesc} onChange={e=>setNewDesc(e.target.value)} placeholder="Descripción (opcional)..."/>
+            <input style={{width:"100%",background:"#ffffff07",border:`1px solid ${T.border}`,borderRadius:10,padding:"11px 14px",color:T.text,fontSize:15,marginBottom:16,boxSizing:"border-box",outline:"none"}} value={newDesc} onChange={e=>setNewDesc(e.target.value)} placeholder="Descripción (opcional)..."/>
+            <div style={{marginBottom:20}}>
+              <div style={{fontSize:10,letterSpacing:3,color:T.textMuted,marginBottom:8}}>PORTADA (OPCIONAL)</div>
+              <div onClick={()=>coverRef.current.click()} style={{height:80,borderRadius:12,border:`2px dashed ${newCover?T.accent+"55":"#ffffff18"}`,overflow:"hidden",cursor:"pointer",position:"relative",background:"#0a0a14",display:"flex",alignItems:"center",justifyContent:"center"}}>
+                {newCover?<><img src={newCover} style={{width:"100%",height:"100%",objectFit:"cover"}}/><div style={{position:"absolute",inset:0,background:"#00000044",display:"flex",alignItems:"center",justifyContent:"center",color:"#fff",fontSize:12}}>Cambiar portada</div></>:<div style={{textAlign:"center",color:"#3a3a5a",fontSize:12}}>📷 Añadir portada</div>}
+              </div>
+              <input ref={coverRef} type="file" accept="image/*" style={{display:"none"}} onChange={handleCoverFile}/>
+            </div>
             <button onClick={create} style={{width:"100%",padding:15,borderRadius:12,border:"none",background:T.accentGrad,color:"#0a0a0f",fontSize:15,fontWeight:700,cursor:"pointer",marginBottom:10}}>✦ Crear colección</button>
             <button onClick={()=>setShowNew(false)} style={{width:"100%",padding:13,borderRadius:12,border:`1px solid ${T.border}`,background:"transparent",color:T.textMuted,fontSize:14,cursor:"pointer"}}>Cancelar</button>
           </div>
@@ -551,13 +650,18 @@ function CollectionScreen({ cards, collections, setCollections, onViewCollection
 }
 
 // ─── CARDS IN COLLECTION ──────────────────────────────────────────────────────
-function CardsInCollection({ collection, cards, rarities, onBack, onView, T }) {
+function CardsInCollection({ collection, cards, rarities, onBack, onView, onUpdateCollection, T }) {
   const colCards=collection?cards.filter(c=>c.collectionId===collection.id):cards.filter(c=>!c.collectionId);
+  const coverRef2=useRef();
+  const handleCover2=async e=>{ const file=e.target.files[0]; if(!file||!collection) return; const img=await fileToImage(file); if(img&&onUpdateCollection) onUpdateCollection({...collection,cover:img}); e.target.value=""; };
+  const hasCover=!!collection?.cover;
   return (
     <div style={{paddingBottom:"calc(100px + var(--sab, 20px))"}}>
-      <div style={{padding:"calc(16px + var(--sat, 44px)) 20px 16px",display:"flex",alignItems:"center",gap:14,position:"sticky",top:0,background:`${T.bg}ee`,backdropFilter:"blur(10px)",zIndex:10}}>
-        <button onClick={onBack} style={{width:36,height:36,borderRadius:"50%",background:"#ffffff14",border:"none",color:T.text,fontSize:20,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>←</button>
-        <div style={{flex:1,minWidth:0}}><div style={{fontSize:17,fontWeight:700,color:T.text,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{collection?.name||"Sin colección"}</div><div style={{fontSize:11,color:T.textMuted}}>{colCards.length} cartas</div></div>
+      {hasCover&&<div style={{height:160,position:"relative",overflow:"hidden",marginBottom:-60}}><img src={collection.cover} style={{width:"100%",height:"100%",objectFit:"cover"}}/><div style={{position:"absolute",inset:0,background:"linear-gradient(to bottom,rgba(0,0,0,0.2) 0%,rgba(0,0,0,0.85) 100%)"}}/></div>}
+      <div style={{padding:`calc(${hasCover?"70px":"16px"} + var(--sat, 44px)) 20px 16px`,display:"flex",alignItems:"center",gap:14,position:"sticky",top:0,background:hasCover?"transparent":`${T.bg}ee`,backdropFilter:"blur(10px)",zIndex:10}}>
+        <button onClick={onBack} style={{width:36,height:36,borderRadius:"50%",background:"#000000aa",backdropFilter:"blur(8px)",border:"1px solid #ffffff20",color:"#fff",fontSize:20,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>←</button>
+        <div style={{flex:1,minWidth:0}}><div style={{fontSize:17,fontWeight:700,color:hasCover?"#fff":T.text,textShadow:hasCover?"0 1px 8px #000":""}}>{collection?.name||"Sin colección"}</div><div style={{fontSize:11,color:hasCover?"#ffffff88":T.textMuted}}>{colCards.length} cartas</div></div>
+        {collection&&<><button onClick={()=>coverRef2.current.click()} style={{background:"#000000aa",backdropFilter:"blur(8px)",border:"1px solid #ffffff30",borderRadius:8,padding:"6px 10px",color:"#fff",fontSize:11,cursor:"pointer",whiteSpace:"nowrap",flexShrink:0}}>📷</button><input ref={coverRef2} type="file" accept="image/*" style={{display:"none"}} onChange={handleCover2}/></>}
       </div>
       {colCards.length===0?(
         <div style={{display:"flex",flexDirection:"column",alignItems:"center",padding:"60px 20px",gap:12,textAlign:"center"}}><div style={{fontSize:48}}>🃏</div><div style={{fontSize:16,fontWeight:700,color:T.textMuted}}>Sin cartas</div><div style={{fontSize:13,color:T.textMuted,opacity:0.6}}>Pulsa ✦ para añadir cartas</div></div>
@@ -631,17 +735,39 @@ function SettingsTab({ categories, setCategories, rarities, setRarities, current
     <div style={{padding:`calc(24px + var(--sat, 44px)) 20px calc(100px + var(--sab, 20px))`}}>
       <div style={{display:"flex",alignItems:"center",gap:12,marginBottom:24}}><BackBtn/><h2 style={{margin:0,fontSize:22,fontWeight:800,color:T.text}}>Temas</h2></div>
       <div style={{display:"flex",flexDirection:"column",gap:12}}>
-        {Object.entries(THEMES).map(([key,theme])=>{
-          const active=currentTheme===key;
-          return(<div key={key} onClick={()=>onTheme(key)} style={{borderRadius:16,overflow:"hidden",border:`2px solid ${active?theme.accent:"transparent"}`,cursor:"pointer",boxShadow:active?`0 0 24px ${theme.accent}33`:""}}>
-            <div style={{height:72,background:theme.bg,backgroundImage:theme.bgGrad,display:"flex",alignItems:"center",padding:"0 18px",gap:14}}>
-              <span style={{fontSize:26}}>{theme.emoji}</span>
-              <div style={{flex:1,display:"flex",gap:6}}><div style={{width:50,height:10,borderRadius:5,background:theme.accent}}/><div style={{width:30,height:10,borderRadius:5,background:theme.accent2}}/></div>
-              <div style={{width:24,height:24,borderRadius:"50%",border:`2px solid ${active?theme.accent:"#ffffff30"}`,background:active?theme.accent:"transparent",display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,color:"#0a0a0f",fontWeight:700}}>{active?"✓":""}</div>
-            </div>
-            <div style={{background:theme.surface,padding:"10px 18px",display:"flex",justifyContent:"space-between",alignItems:"center"}}><div style={{fontSize:14,fontWeight:700,color:theme.text}}>{theme.name}</div>{active&&<span style={{fontSize:10,color:theme.accent,letterSpacing:2}}>ACTIVO</span>}</div>
-          </div>);
-        })}
+        <div style={{marginBottom:12}}>
+          <div style={{fontSize:10,letterSpacing:3,color:T.textMuted,marginBottom:10}}>GRATIS</div>
+          <div style={{display:"flex",flexDirection:"column",gap:10}}>
+          {Object.entries(THEMES).filter(([,t])=>!t.premium).map(([key,theme])=>{
+            const active=currentTheme===key;
+            return(<div key={key} onClick={()=>onTheme(key)} style={{borderRadius:16,overflow:"hidden",border:`2px solid ${active?theme.accent:"transparent"}`,cursor:"pointer",boxShadow:active?`0 0 24px ${theme.accent}33`:"",transition:"all 0.2s"}}>
+              <div style={{height:72,background:theme.bg,backgroundImage:theme.bgGrad,display:"flex",alignItems:"center",padding:"0 18px",gap:14}}>
+                <span style={{fontSize:26}}>{theme.emoji}</span>
+                <div style={{flex:1,display:"flex",gap:6,alignItems:"center"}}><div style={{width:50,height:8,borderRadius:4,background:theme.accent}}/><div style={{width:30,height:8,borderRadius:4,background:theme.accent2}}/></div>
+                <div style={{width:24,height:24,borderRadius:"50%",border:`2px solid ${active?theme.accent:"#ffffff30"}`,background:active?theme.accent:"transparent",display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,color:"#0a0a0f",fontWeight:700}}>{active?"✓":""}</div>
+              </div>
+              <div style={{background:theme.surface,padding:"10px 18px",display:"flex",justifyContent:"space-between",alignItems:"center"}}><div style={{fontSize:14,fontWeight:700,color:theme.text}}>{theme.name}</div>{active&&<span style={{fontSize:10,color:theme.accent,letterSpacing:2}}>ACTIVO</span>}</div>
+            </div>);
+          })}
+          </div>
+        </div>
+        <div>
+          <div style={{fontSize:10,letterSpacing:3,color:T.textMuted,marginBottom:10}}>✦ PREMIUM</div>
+          <div style={{display:"flex",flexDirection:"column",gap:10}}>
+          {Object.entries(THEMES).filter(([,t])=>t.premium).map(([key,theme])=>{
+            const active=currentTheme===key;
+            return(<div key={key} onClick={()=>onTheme(key)} style={{borderRadius:16,overflow:"hidden",border:`2px solid ${active?theme.accent:"#ffffff10"}`,cursor:"pointer",boxShadow:active?`0 0 28px ${theme.accent}44`:"",transition:"all 0.2s",position:"relative"}}>
+              <div style={{position:"absolute",top:10,right:12,background:"linear-gradient(135deg,#ffd700,#ff9f43)",borderRadius:8,padding:"2px 8px",fontSize:9,color:"#0a0a0f",fontWeight:800,letterSpacing:1,zIndex:2}}>PREMIUM</div>
+              <div style={{height:72,background:theme.bg,backgroundImage:theme.bgGrad,display:"flex",alignItems:"center",padding:"0 18px",gap:14}}>
+                <span style={{fontSize:26}}>{theme.emoji}</span>
+                <div style={{flex:1,display:"flex",gap:6,alignItems:"center"}}><div style={{width:50,height:8,borderRadius:4,background:theme.accent}}/><div style={{width:30,height:8,borderRadius:4,background:theme.accent2}}/></div>
+                <div style={{width:24,height:24,borderRadius:"50%",border:`2px solid ${active?theme.accent:"#ffffff30"}`,background:active?theme.accent:"transparent",display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,color:"#0a0a0f",fontWeight:700}}>{active?"✓":""}</div>
+              </div>
+              <div style={{background:theme.surface,padding:"10px 18px",display:"flex",justifyContent:"space-between",alignItems:"center"}}><div style={{fontSize:14,fontWeight:700,color:theme.text}}>{theme.name}</div>{active&&<span style={{fontSize:10,color:theme.accent,letterSpacing:2}}>ACTIVO</span>}</div>
+            </div>);
+          })}
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -760,7 +886,7 @@ export default function App() {
   const [collections,setCollections] = useState([]);
   const [categories,setCategories]   = useState(DEFAULT_CATEGORIES);
   const [rarities,setRarities]       = useState(DEFAULT_RARITIES);
-  const [themeName,setThemeName]     = useState("vault");
+  const [themeName,setThemeName]     = useState("cesar");
   const [loading,setLoading]         = useState(true);
   const [tab,setTab]                 = useState("collection");
   const [activeCollection,setActiveCollection] = useState(undefined);
@@ -806,8 +932,8 @@ export default function App() {
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');*{box-sizing:border-box;}button,input,select{font-family:Inter,sans-serif;}select option{background:#1a1a2e;color:#e8e0d5;}:root{--sat:env(safe-area-inset-top,44px);--sab:env(safe-area-inset-bottom,20px);}.__safe_top{padding-top:calc(24px + var(--sat))!important;}.__safe_top_sm{padding-top:calc(16px + var(--sat))!important;}.__nav_bottom{padding-bottom:calc(28px + var(--sab))!important;}`}</style>
 
       {tab==="collection"&&activeCollection===undefined&&<CollectionScreen cards={cards} collections={collections} setCollections={handleCollections} onViewCollection={col=>setActiveCollection(col)} T={T}/>}
-      {tab==="collection"&&activeCollection!==undefined&&<CardsInCollection collection={activeCollection} cards={cards} rarities={rarities} onBack={()=>setActiveCollection(undefined)} onView={setViewCard} T={T}/>}
-      {tab==="search"&&<SearchTab cards={cards} rarities={rarities} onView={setViewCard} T={T}/>}
+      {tab==="collection"&&activeCollection!==undefined&&<CardsInCollection collection={activeCollection} cards={cards} rarities={rarities} onBack={()=>setActiveCollection(undefined)} onView={setViewCard} onUpdateCollection={col=>{const next=collections.map(c=>c.id===col.id?col:c);handleCollections(next);setActiveCollection(col);}} T={T}/>}
+      {tab==="search"&&<SearchTab cards={cards} rarities={rarities} onView={setViewCard} onUpdateCollection={col=>{const next=collections.map(c=>c.id===col.id?col:c);handleCollections(next);setActiveCollection(col);}} T={T}/>}
       {tab==="settings"&&<SettingsTab categories={categories} setCategories={handleCategories} rarities={rarities} setRarities={handleRarities} currentTheme={themeName} onTheme={handleTheme} T={T}/>}
 
       <BottomNav tab={tab} setTab={t=>{setTab(t);if(t==="collection")setActiveCollection(undefined);}} T={T}/>

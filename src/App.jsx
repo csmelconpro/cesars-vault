@@ -593,11 +593,8 @@ function CollectionScreen({ cards, collections, setCollections, onViewCollection
   const uncategorized=cards.filter(c=>!c.collectionId).length;
   return (
     <div style={{paddingBottom:"calc(100px + var(--sab, 20px))"}}>
-      <div style={{padding:"calc(56px + var(--sat, 44px)) 20px 20px",display:"flex",alignItems:"center",gap:12}}>
-        <VaultLogo size={42}/>
-        <h1 style={{margin:0,fontSize:28,fontWeight:900,letterSpacing:-0.5}}>
-          <span style={{color:T.accent}}>CÉSAR'S</span> VAULT
-        </h1>
+      <div style={{padding:"calc(20px + var(--sat, 44px)) 20px 12px",display:"flex",alignItems:"center",justifyContent:"center"}}>
+        <VaultLogoH height={60}/>
       </div>
       {uncategorized>0&&<div onClick={()=>onViewCollection(null)} style={{margin:"0 20px 14px",background:T.surface2,border:`1px solid ${T.border}`,borderRadius:16,padding:16,cursor:"pointer",display:"flex",alignItems:"center",gap:14}}>
         <div style={{width:50,height:50,borderRadius:12,background:"#ffffff10",display:"flex",alignItems:"center",justifyContent:"center",fontSize:22,flexShrink:0}}>📦</div>
